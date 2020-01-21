@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+-->
+
+<AnchorPane minHeight="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.WelcomeController">
+    <HBox fx:id="hb" prefHeight="60.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label prefHeight="3.0" prefWidth="71.0" text="CVis" textFill="firebrick">
+            <HBox.margin>
+                <Insets left="100.0" top="15.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Verdana Regular" size="29.0"/>
+            </font>
+        </Label>
+        <Label prefHeight="30.0" prefWidth="275.0" text="License no. :">
+            <HBox.margin>
+                <Insets left="750.0" top="15.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Verdana Regular" size="14.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <VBox fx:id="vb" layoutY="60.0" prefHeight="650.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.topAnchor="60.0">
+        <AnchorPane fx:id="vbap" prefHeight="70.0" prefWidth="300.0">
+            <Label fx:id="lvb" layoutX="58.0" layoutY="47.0" prefHeight="6.0" prefWidth="185.0" text="Home">
+                <VBox.margin>
+                    <Insets left="50.0" top="50.0"/>
+                </VBox.margin>
+                <font>
+                    <Font name="Verdana Regular" size="14.0"/>
+                </font>
+                <StackPane.margin>
+                    <Insets/>
+                </StackPane.margin>
+            </Label>
+        </AnchorPane>
+
+        <Button fx:id="niButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="182.0" text="New Images">
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <VBox.margin>
+                <Insets left="50.0" top="50.0"/>
+            </VBox.margin>
+        </Button>
+        <Button fx:id="siButton" layoutX="10.0" layoutY="156.0" mnemonicParsing="false" onAction="#siHandle"
+                prefHeight="46.0" prefWidth="182.0" text="Saved Images">
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <VBox.margin>
+                <Insets left="50.0" top="10.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
+
+    <StackPane fx:id="stpa" layoutX="300.0" layoutY="60.0" prefHeight="100.0" prefWidth="900.0"
+               AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0">
+        <Label layoutX="250.0" prefHeight="36.0" prefWidth="335.0" text="Welcome to Visualizer">
+            <font>
+                <Font name="Verdana Regular" size="30.0"/>
+            </font>
+            <StackPane.margin>
+                <Insets left="-0.0"/>
+            </StackPane.margin>
+        </Label>
+    </StackPane>
+
+    <ScrollPane fx:id="sp" layoutX="300.0" layoutY="160.0" prefHeight="900.0" prefWidth="900.0"
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="160.0">
+        <VBox fx:id="spvb" minWidth="${sp.viewportBounds.width}" prefHeight="700.0" prefWidth="900.0">
+            <HBox fx:id="aphb" alignment="CENTER" layoutX="-160.0" layoutY="2.0" maxWidth="875.0"
+                  prefHeight="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <Button fx:id="intBtn" mnemonicParsing="false" onAction="#intAction" text="Interior">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Label contentDisplay="CENTER" prefHeight="30.0" prefWidth="106.0" text="Templates">
+                    <font>
+                        <Font name="Verdana Regular" size="20.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="extBtn" mnemonicParsing="false" onAction="#extAction" text="Exterior">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+            </HBox>
+            <HBox fx:id="spaphb" layoutX="10.0" layoutY="72.0" maxWidth="875.0" prefHeight="145.0">
+                <Button fx:id="btl" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Living Room"/>
+                <Button fx:id="btb" layoutX="265.0" layoutY="50.0" mnemonicParsing="false" text="Bedroom"/>
+                <Button fx:id="btk" layoutX="115.0" layoutY="50.0" mnemonicParsing="false" text="Kitchen"/>
+                <Button fx:id="btd" layoutX="109.0" layoutY="10.0" mnemonicParsing="false" text="Dining hall"/>
+                <Button fx:id="btbr" layoutX="264.0" layoutY="10.0" mnemonicParsing="false" text="Bathroom"/>
+            </HBox>
+            <HBox fx:id="hbTemp" layoutY="225.0" maxWidth="875.0"/>
+            <Label fx:id="recentLabel" alignment="CENTER" VBox.vgrow="ALWAYS">
+                <font>
+                    <Font size="15.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets right="750.0" top="25.0"/>
+                </VBox.margin>
+            </Label>
+            <TilePane fx:id="tileRecent" layoutX="10.0" layoutY="225.0" maxWidth="875.0"/>
+            <FlowPane fx:id="pane" prefHeight="50.0"/>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>
